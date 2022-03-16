@@ -1,0 +1,26 @@
+FROM ruby:3.0.3
+
+ENV APP_PATH /var/app
+ENV BUNDLE_VERSION 2.3.5
+ENV RAILS_PORT 3000
+
+
+RUN apt-get update -qq && apt-get install -y nodejs postgresql-client
+RUN gem install bundler --version "$BUNDLE_VERSION"
+
+WORKDIR $APP_PATH
+
+COPY Gemfile Gemfile.lock ./
+RUN bundle check || bundle install --jobs 20 --retry 5
+
+COPY . .
+
+# Add a script to be executed every time the container starts.
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+
+ENTRYPOINT ["entrypoint.sh"]
+EXPOSE 3000
+
+# Configure the main process to run when running the image
+CMD ["rails", "server", "-b", "0.0.0.0", "-p", $RAILS_PORT]

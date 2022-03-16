@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      body {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: max(100vh - 20rem);
+        align-items: center;
+        justify-content: center;
+      }
+      div {
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2rem;
+        box-shadow: 11px 11px 3rem #f0f4f4, -11px -11px 3rem #f0f4f4;
+        padding: 2rem;
+        height: 70%;
+        width: 80%;
+        margin-top: 10rem;
+      }
+      .divider {
+        margin-top: 2rem;
+        margin-bottom: 0.8rem;
+        color: #3a3a3a;
+        font-weight: 800;
+      }
+      .url-cp {
+        letter-spacing: 1.5px;
+        padding: 10px;
+      }
+      .url-cp:hover {
+        background: #fbf9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2 style="margin-bottom: 2rem;">Thanks for signing up <%= @user.full_name || @user.email %>!</h2>
+      <a style="font-weight: 300;" href="http://localhost:3000/users/verify?token=<%=@user.reset_password_token%>">
+        Click here to verify your account!
+      </a>
+      <p class="divider">OR copy & paste the following URL in your browser</p>
+      <p class="url-cp"><%= "http://localhost:3000/users/verify?token=#{@user.reset_password_token}" %></p>
+    </div>
+  </body>
+</html>

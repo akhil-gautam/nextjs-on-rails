@@ -1,0 +1,60 @@
+version: '3.9'
+networks:
+  development:
+volumes:
+  db_data:
+  gem_cache:
+  node_modules:
+services:
+  db:
+    image: postgres:14.1-alpine
+    container_name: nextjs_rails_db
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - development
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/rails.Dockerfile.dev
+    image: nextjs_rails_server:development
+    tty: true
+    stdin_open: true
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/var/app:cached
+      - gem_cache:/usr/local/bundle/gems
+    networks:
+      - development
+    ports:
+      - 3000:3000
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_HOST: db
+      DATABASE: nextjs_on_rails_development
+      RAILS_ENV: development
+    depends_on:
+      - db
+      - frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: ../docker/frontend.Dockerfile.dev
+    image: nextjs_rails_frontend:development
+    networks:
+      - development
+    volumes:
+      - ./frontend:/var/app:cached
+      - node_modules:/var/app/node_modules
+    ports:
+      - 8000:8000
+    environment:
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: 1
+    command: npm run dev

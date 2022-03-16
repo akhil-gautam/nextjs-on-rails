@@ -1,0 +1,6 @@
+en:
+  user:
+    errors:
+      verify: User not found with the given token!
+      login: Email or password is incorrect!
+      not_found: User not found with the given ID!

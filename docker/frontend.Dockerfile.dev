@@ -1,0 +1,14 @@
+FROM node:16.14.0
+
+ENV APP_PATH /var/app
+ENV NEXT_PORT 8080
+
+WORKDIR $APP_PATH
+
+COPY package.json package-lock.json ./
+RUN npm install
+
+COPY . ./
+
+EXPOSE $NEXT_PORT
+CMD ["npm", "run", "dev"]
