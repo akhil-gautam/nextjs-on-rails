@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::API
+  include Pundit::Authorization
+
   before_action :authenticate_user
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  rescue_from Pundit::NotAuthorizedError, with: :unauthorized_access
   # rescue_from UnauthorizedError, with: :unauthorized_access
 
   def authenticate_user
@@ -22,13 +25,17 @@ class ApplicationController < ActionController::API
     end
   end
 
+  def current_user
+    @current_user
+  end
+
   private
 
   def record_not_found
-    render json: { errors: 'Record not found' }, status: :not_found
+    return render json: { errors: I18n.t('generic.record_not_found') }, status: :not_found
   end
 
   def unauthorized_access
-    render json: { message: 'You are not authorized to access this resource!' }, status: :unprocessable_entity
+    return render json: { message: I18n.t('authorization.error') }, status: :forbidden
   end
 end

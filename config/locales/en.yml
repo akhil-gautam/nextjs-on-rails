@@ -1,6 +1,10 @@
 en:
   user:
     errors:
-      verify: User not found with the given token!
-      login: Email or password is incorrect!
-      not_found: User not found with the given ID!
+      verify: User not found with the given token.
+      login: Email or password is incorrect.
+      not_found: User not found with the given ID.
+  generic:
+    record_not_found: Record not found.
+  authorization:
+    error: Unauthorized access.

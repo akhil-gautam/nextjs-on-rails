@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      skip_before_action :authenticate_user
+      skip_before_action :authenticate_user, only: [:create, :login, :verify]
       before_action :set_user, only: [:update]
 
       # serves as signup
@@ -17,7 +17,8 @@ module Api
       end
 
       def update
-        result = User::Update.call(params: user_params.except(:email))
+        authorize @user
+        # result = User::Update.call(params: user_params.except(:email))
       end
 
       def login
