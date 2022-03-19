@@ -127,7 +127,6 @@ GEM
     io-wait (0.2.1)
     jb (0.8.0)
     jwt (2.3.0)
-    kwalify (0.7.2)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.8.0)
@@ -221,10 +220,6 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
-    reek (6.1.0)
-      kwalify (~> 0.7.0)
-      parser (~> 3.1.0)
-      rainbow (>= 2.0, < 4.0)
     regexp_parser (2.2.1)
     rexml (3.2.5)
     rubocop (1.26.0)
@@ -303,7 +298,6 @@ DEPENDENCIES
   pundit
   rack-cors
   rails (~> 7.0.2, >= 7.0.2.3)
-  reek (~> 6.1.0)
   rubocop-github
   rubocop-performance
   rubocop-rails

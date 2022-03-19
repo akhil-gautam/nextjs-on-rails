@@ -39,7 +39,6 @@ end
 group :development do
   gem 'annotate', '~> 3.2'
   gem 'letter_opener', '~> 1.8'
-  gem 'reek', '~> 6.1.0', require: false
   gem 'rubocop-github'
   gem 'rubocop-performance', require: false
   gem 'rubocop-rails', require: false
