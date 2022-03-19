@@ -18,11 +18,15 @@ module Api
 
       def update
         authorize @user
-        # result = User::Update.call(params: user_params.except(:email))
+        if @user.update(user_params)
+          render json: { message: I18n.t('generic.update.success')}, status: :ok
+        else
+          render json: { errors: @user.error_string }, status: :unprocessable_entity
+        end
       end
 
       def login
-        user = User.find_by_email(login_params[:email])
+        user = User.verified.where(email: login_params[:email]).first
         if user&.authenticate(login_params[:password])
           token = JsonWebToken.encode(user_id: user.id)
           time = Time.zone.now + 100.hours
@@ -38,7 +42,7 @@ module Api
 
       def verify
         user = User.find_by(reset_password_token: params[:token])
-        return render json: { error: I18n.t('user.errors.verify') }, status: :not_found unless user
+        return render json: { errors: I18n.t('user.errors.verify') }, status: :not_found unless user
 
         user.update(reset_password_token: nil)
         render json: { success: true }, status: :ok

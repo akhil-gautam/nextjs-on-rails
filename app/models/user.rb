@@ -31,6 +31,8 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: { case_sensitive: false }
   validates :password, length: { minimum: 8 }, on: :create
 
+  scope :verified, -> { where(reset_password_token: nil) }
+
   def full_name
     "#{first_name} #{last_name}"
   end

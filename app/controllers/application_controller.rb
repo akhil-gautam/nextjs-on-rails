@@ -21,7 +21,7 @@ class ApplicationController < ActionController::API
         render json: { errors: 'Session expired. Please login again!' }, status: :unauthorized
       end
     else
-      render json: { errors: 'Authorization token not provided' }, status: :unauthorized
+      render json: { errors: 'Authentication token not provided' }, status: :unauthorized
     end
   end
 
@@ -36,6 +36,6 @@ class ApplicationController < ActionController::API
   end
 
   def unauthorized_access
-    return render json: { message: I18n.t('authorization.error') }, status: :forbidden
+    return render json: { errors: I18n.t('authorization.error') }, status: :forbidden
   end
 end
