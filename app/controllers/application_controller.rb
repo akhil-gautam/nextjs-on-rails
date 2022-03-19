@@ -25,17 +25,15 @@ class ApplicationController < ActionController::API
     end
   end
 
-  def current_user
-    @current_user
-  end
+  attr_reader :current_user
 
   private
 
   def record_not_found
-    return render json: { errors: I18n.t('generic.record_not_found') }, status: :not_found
+    render json: { errors: I18n.t('generic.record_not_found') }, status: :not_found
   end
 
   def unauthorized_access
-    return render json: { errors: I18n.t('authorization.error') }, status: :forbidden
+    render json: { errors: I18n.t('authorization.error') }, status: :forbidden
   end
 end

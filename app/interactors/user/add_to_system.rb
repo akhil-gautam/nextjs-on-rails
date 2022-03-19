@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-class User::AddToSystem
-  include Interactor::Organizer
+module User
+  class AddToSystem
+    include Interactor::Organizer
 
-  organize User::Create, Mail::VerifyUser
+    organize User::Create, Mail::VerifyUser
+  end
 end

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require_relative 'boot'
-require_relative '../lib/health_check/middleware_healthcheck'
 
 require 'rails/all'
 
@@ -25,7 +24,6 @@ module NextjsOnRails
     # Only loads a smaller set of middleware suitable for API only apps.
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
-    # config.middleware.insert_after Rails::Rack::Logger, MiddlewareHealthcheck
     config.api_only = true
     config.active_job.queue_adapter = :good_job
   end

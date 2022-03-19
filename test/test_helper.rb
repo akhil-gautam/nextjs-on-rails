@@ -13,10 +13,10 @@ module ActiveSupport
   class TestCase
     parallelize(workers: :number_of_processors)
     include FactoryBot::Syntax::Methods
-    
+
     def get_auth_headers(user)
       token = JsonWebToken.encode(user_id: user.id)
-      { "Authorization" => "Token #{token}" }
+      { 'Authorization' => "Token #{token}" }
     end
   end
 end

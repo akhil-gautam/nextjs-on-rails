@@ -3,7 +3,7 @@
 module Api
   module V1
     class UsersController < ApplicationController
-      skip_before_action :authenticate_user, only: [:create, :login, :verify]
+      skip_before_action :authenticate_user, only: %i[create login verify]
       before_action :set_user, only: [:update]
 
       # serves as signup
@@ -19,7 +19,7 @@ module Api
       def update
         authorize @user
         if @user.update(user_params)
-          render json: { message: I18n.t('generic.update.success')}, status: :ok
+          render json: { message: I18n.t('generic.update.success') }, status: :ok
         else
           render json: { errors: @user.error_string }, status: :unprocessable_entity
         end

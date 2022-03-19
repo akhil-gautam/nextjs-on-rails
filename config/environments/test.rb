@@ -31,7 +31,7 @@ Rails.application.configure do
 
   config.active_job.queue_adapter = :good_job
   config.good_job.execution_mode = :inline
-  
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 
