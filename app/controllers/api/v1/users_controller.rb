@@ -8,7 +8,7 @@ module Api
 
       # serves as signup
       def create
-        result = User::AddToSystem.call(params: user_params)
+        result = UserInteractor::AddToSystem.call(params: user_params)
         if result.success?
           render json: result.user, status: :created
         else
@@ -45,7 +45,7 @@ module Api
         return render json: { errors: I18n.t('user.errors.verify') }, status: :not_found unless user
 
         user.update(reset_password_token: nil)
-        render json: { success: true }, status: :ok
+        render json: { success: 'Verified successfully, please login now!' }, status: :ok
       end
 
       private
@@ -60,7 +60,7 @@ module Api
       end
 
       def login_params
-        params.permit(:email, :password)
+        params.permit!
       end
     end
   end

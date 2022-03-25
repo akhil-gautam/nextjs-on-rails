@@ -12,7 +12,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.datetime :reset_password_sent_at
       t.integer :sign_in_count, default: 0, null: false
       t.string :provider, default: 'email', null: false
-      t.jsonb :tokens
       t.timestamps
     end
   end

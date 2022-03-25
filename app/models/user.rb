@@ -14,7 +14,6 @@
 #  reset_password_token   :string
 #  role                   :integer          default("customer"), not null
 #  sign_in_count          :integer          default(0), not null
-#  tokens                 :jsonb
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
