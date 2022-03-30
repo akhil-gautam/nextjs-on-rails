@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className='w-full flex items-center md:justify-between py-2 px-5 bg-slate-800 text-white'>
+      <header className='w-full flex items-center justify-between py-2 px-5 bg-slate-800 text-white'>
         <h1 className='font-bold text-3xl'>
           <Link href='/'>
             <a>NXR</a>
@@ -43,15 +43,17 @@ export default function Header() {
             </li>
           </ul>
         </nav>
-        {user?.token?.length ? (
-          <Button onClick={signOut}>Sign out</Button>
-        ) : (
-          <Link href='/auth/signin'>
-            <a>
-              <Button className='bg-slate-800'>Sign in</Button>
-            </a>
-          </Link>
-        )}
+        <div className='hidden md:flex'>
+          {user?.token?.length ? (
+            <Button onClick={signOut}>Sign out</Button>
+          ) : (
+            <Link href='/auth/signin'>
+              <a>
+                <Button className='bg-slate-800'>Sign in</Button>
+              </a>
+            </Link>
+          )}
+        </div>
       </header>
       {showMenu && (
         <nav className='py-5 font-semibold bg-yellow-200'>
