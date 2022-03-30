@@ -5,11 +5,9 @@ import Axios from 'axios';
 import defaultTheme from '../components/themes/default';
 
 export function userFromCookie(req) {
-  return req?.headers?.cookie
-    ? JSON.parse(
-        cookie.parse(req ? req.headers.cookie || '' : document.cookie).user
-      )
-    : null;
+  return JSON.parse(
+    cookie.parse(req ? req.headers.cookie || '' : document.cookie).nextRailsUser
+  );
 }
 
 export const ThemeContext = React.createContext({ theme: defaultTheme });

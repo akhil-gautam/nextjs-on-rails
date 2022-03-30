@@ -13,7 +13,7 @@ import { useUser } from '../../store/user';
 export default function SignUp() {
   const router = useRouter();
   const { addUser } = useUser();
-  const [_cookie, setCookie] = useCookies(['user']);
+  const [_cookie, setCookie] = useCookies(['nextRailsUser']);
   const [loading, setLoading] = useState(false);
 
   const {
@@ -27,7 +27,7 @@ export default function SignUp() {
     setLoading(true);
     try {
       const { data } = await axios.post(`${API_URL}users/login`, formData);
-      setCookie('user', JSON.stringify(data), {
+      setCookie('nextRailsUser', JSON.stringify(data), {
         path: '/',
         maxAge:
           new Date(data.exp.replace(/\s/, 'T')).getTime() -

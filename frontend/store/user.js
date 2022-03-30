@@ -4,11 +4,11 @@ import { persist } from 'zustand/middleware';
 export const useUser = create(
   persist(
     (set, _get) => ({
-      user: null,
-      addUser: (user) => set({ user }),
+      nextRailsUser: null,
+      addUser: (user) => set({ nextRailsUser: user }),
     }),
     {
-      name: 'user-auth',
+      name: 'nextRailsUser',
       getStorage: () => localStorage,
     }
   )

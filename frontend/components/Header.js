@@ -6,13 +6,13 @@ import { Button } from './shared';
 import { useCookies } from 'react-cookie';
 
 export default function Header() {
-  const { user, addUser } = useUser();
+  const { nextRailsUser: user, addUser } = useUser();
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-  const [cookies, setCookie, removeCookie] = useCookies(['user']);
+  const [cookies, setCookie, removeCookie] = useCookies(['nextRailsUser']);
 
   const signOut = () => {
-    removeCookie('user');
+    removeCookie('nextRailsUser');
     addUser(null);
   };
 
