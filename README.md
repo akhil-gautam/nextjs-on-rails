@@ -43,7 +43,7 @@ docker-compse up
 
 ### Manual
 - Ruby 3.0.3
-- Node >= 14.x.x
+- Node >= 16.x.x
 
 ```bash
 # run in the root directory
