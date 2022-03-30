@@ -3,6 +3,8 @@
 ![image](https://user-images.githubusercontent.com/28865023/159129958-04d9bf87-5b5c-4ad7-a8e8-628ff418c3e9.png)
 
 
+#### Note: Everything is crafted for my pet projects!
+
 Next.js on Rails is an opinionated template for quickly setting up a project with Next.js as the frontend and Ruby on Rails as the backend API.
 
 It follows the best practices of [Next.js](https://nextjs.org/docs/getting-started/introduction) and [Ruby on Rails](https://rubyonrails.org/). It is actively maintained and is a great starting point for new projects.
