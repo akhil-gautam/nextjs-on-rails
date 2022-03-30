@@ -16,23 +16,28 @@ docker-compse up
 ```
 
 ## Features:
-#### Backend
-- User Authentication using JWT
-- User Authorization using Pundit
-- Interactor Pattern for API using interactor gem
-- premailer-rails for styling emails with stylesheets
-- pagy for faster pagination
-- jb for a fast JSON API builder
-- MiniTest for testing
-- SimpleCov for code coverage
+#### Backend 🚆 
+- [x] User Authentication using JWT
+- [x] User Authorization using Pundit
+- [ ] Organizations support(Feature in progress)
+- [x] Interactor Pattern for API using interactor gem
+- [x] premailer-rails for styling emails with stylesheets
+- [x] pagy for faster pagination
+- [x] jb for a fast JSON API builder
+- [x] MiniTest for testing
+- [x] SimpleCov for code coverage
 
-### Frontend
-- User Signup and Login
-- User Profile
-- All basic components under `components/shared`
+### Frontend 🖥
+- [x] User Signup and Login
+- [x] User Profile
+- [x] All basic components under `components/shared`
+- [x] DaisyUI for creating additional components
+- [x] react-cookie 🍪 for sharing tokens in SSR
+- [x] zustand as minimal state management library
+- [x] @headlessui/react for accessibile components like `modal/dialog`
 
 
-## Setup instructions
+## Setup instructions 🔌💡
 
 ### Manual
 - Ruby 3.0.3
@@ -53,7 +58,7 @@ $ cd frontend && npm install && cd ..
 $ foreman start
 ```
 
-### Docker
+### Docker 🚢
 ```bash
 $ docker-compose up
 ```
