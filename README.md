@@ -65,6 +65,16 @@ $ foreman start
 $ docker-compose up
 ```
 
+### Screenshots(desktop 🖥  & mobile 📱)
+<img width="1440" alt="Screenshot 2022-03-30 at 11 52 33 PM" src="https://user-images.githubusercontent.com/28865023/160905078-70e6b19d-9a77-41f9-bca1-6475a72e3988.png">
+
+<img width="677" alt="Screenshot 2022-03-30 at 11 52 46 PM" src="https://user-images.githubusercontent.com/28865023/160905137-9e7b5b76-b44c-4b8a-9319-8b440c55e37c.png">
+
+<img width="457" alt="Screenshot 2022-03-30 at 11 52 58 PM" src="https://user-images.githubusercontent.com/28865023/160905175-5af61def-45df-4f3f-a699-5ea4da04aa47.png">
+
+<img width="336" alt="Screenshot 2022-03-30 at 11 53 46 PM" src="https://user-images.githubusercontent.com/28865023/160905210-872ec609-7bad-41cd-8d85-1d029df3c442.png">
+
+
 
 ## Contribution
 Contribution is welcome! It can be as simple as fixing a typo.
