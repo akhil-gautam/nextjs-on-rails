@@ -90,6 +90,6 @@ $ docker-compose up
 
 
 ## Contribution
-Contribution is welcome! It can be as simple as fixing a typo.
+Contributions are appreciated! It can be as simple as fixing a typo.
 <br><br>
 If you're facing any difficulty, create issues in the github repo and I will be happy to help.
