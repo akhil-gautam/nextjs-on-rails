@@ -1,4 +1,4 @@
-FROM ruby:3.0.3
+FROM ruby:3.1.2
 
 ENV APP_PATH /var/app
 ENV BUNDLE_VERSION 2.3.5

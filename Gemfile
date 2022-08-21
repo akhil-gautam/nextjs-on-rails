@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.0.3'
+ruby '3.1.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'good_job'
 gem 'interactor', '~> 3.0'
@@ -11,12 +11,12 @@ gem 'interactor-rails', '~> 2.0'
 gem 'jb'
 gem 'jwt'
 gem 'pagy', '~> 5.10'
-gem 'pg', '~> 1.1'
+gem 'pg', '1.4.3'
 gem 'premailer-rails'
-gem 'puma', '~> 5.0'
+gem 'puma'
 gem 'pundit'
 gem 'rack-cors'
-gem 'rails', '~> 7.0.2', '>= 7.0.2.3'
+gem 'rails', '7.0.3.1'
 gem 'strong_migrations'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
