@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next -p 8000",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -14,18 +14,20 @@
     "classnames": "^2.3.1",
     "cookie": "^0.4.2",
     "daisyui": "^2.13.4",
-    "next": "12.1.2",
-    "react": "17.0.2",
+    "next": "12.2.5",
+    "react": "18.2.0",
     "react-cookie": "^4.1.1",
-    "react-dom": "17.0.2",
+    "react-dom": "18.2.0",
     "react-feather": "^2.0.9",
     "react-hook-form": "^7.28.0",
-    "react-hot-toast": "^2.2.0",
+    "react-hot-toast": "^2.3.0",
     "zustand": "3.7.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.4",
-    "postcss": "^8.4.12",
-    "tailwindcss": "^3.0.23"
+    "autoprefixer": "^10.4.8",
+    "eslint": "8.22.0",
+    "eslint-config-next": "12.2.5",
+    "postcss": "^8.4.16",
+    "tailwindcss": "^3.1.8"
   }
 }

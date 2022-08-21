@@ -9,7 +9,7 @@ export default function Header() {
   const { nextRailsUser: user, addUser } = useUser();
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => setShowMenu(!showMenu);
-  const [cookies, setCookie, removeCookie] = useCookies(['nextRailsUser']);
+  const [_cookies, _setCookie, removeCookie] = useCookies(['nextRailsUser']);
 
   const signOut = () => {
     removeCookie('nextRailsUser');
