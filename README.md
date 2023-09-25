@@ -93,3 +93,4 @@ $ docker-compose up
 Contributions are appreciated! It can be as simple as fixing a typo.
 <br><br>
 If you're facing any difficulty, create issues in the github repo and I will be happy to help.
+# next-rails
